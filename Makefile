@@ -1,4 +1,4 @@
-.PHONY: build icons check clean open
+.PHONY: build icons check clean open release-local
 
 build:
 	./build.sh
@@ -18,3 +18,9 @@ open:
 
 clean:
 	./build.sh clean
+
+# Signed + notarized zip in dist/ using a Developer ID identity in your keychain.
+# Notarization: NOTARY_KEYCHAIN_PROFILE=<profile> (see docs/RELEASING.md), or NOTARIZE=0.
+release-local:
+	@test -n "$(VERSION)" || { echo "usage: make release-local VERSION=x.y.z"; exit 1; }
+	scripts/release.sh "$(VERSION)"
