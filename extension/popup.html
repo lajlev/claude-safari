@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Send to Claude</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-32.png" alt="" width="16" height="16">
+    <span>Send to Claude</span>
+  </header>
+
+  <main id="actions">
+    <button id="btn-new" class="action" data-mode="new" data-command="send-page">
+      <span class="label">
+        <span class="title">New chat</span>
+        <span class="hint" id="hint-new">Opens a fresh chat</span>
+      </span>
+      <kbd id="kbd-new">⌘E</kbd>
+    </button>
+    <button id="btn-add" class="action" data-mode="add" data-command="add-to-chat">
+      <span class="label">
+        <span class="title">Add to current chat</span>
+        <span class="hint" id="hint-add">Adds to the open conversation</span>
+      </span>
+      <kbd id="kbd-add">⇧⌘E</kbd>
+    </button>
+  </main>
+
+  <p id="notice" hidden></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
